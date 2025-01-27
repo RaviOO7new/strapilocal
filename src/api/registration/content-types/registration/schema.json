@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "registrations",
+  "info": {
+    "singularName": "registration",
+    "pluralName": "registrations",
+    "displayName": "SSParticipantRegistration",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "RegisteredType": {
+      "type": "enumeration",
+      "enum": [
+        "Online",
+        "Spot"
+      ]
+    },
+    "RegistrationNo": {
+      "type": "integer"
+    },
+    "participants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::participant.participant",
+      "inversedBy": "registrations"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "registrations"
+    },
+    "ArrivalDateTime": {
+      "type": "datetime"
+    },
+    "DepartureDateTime": {
+      "type": "datetime"
+    },
+    "room_allocations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::room-allocation.room-allocation",
+      "mappedBy": "ss_participant_registration"
+    }
+  }
+}

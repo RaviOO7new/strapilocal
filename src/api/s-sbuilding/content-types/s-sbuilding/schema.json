@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "s_sbuildings",
+  "info": {
+    "singularName": "s-sbuilding",
+    "pluralName": "s-sbuildings",
+    "displayName": "SSbuilding"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BuildingName": {
+      "type": "string"
+    },
+    "TotalFloors": {
+      "type": "integer"
+    },
+    "Attributes": {
+      "type": "enumeration",
+      "enum": [
+        "NearEntrance,",
+        "NearDining,",
+        "NearReception,",
+        "NextoInfosys"
+      ]
+    },
+    "ss_rooms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ss-room.ss-room",
+      "mappedBy": "s_sbuilding"
+    }
+  }
+}

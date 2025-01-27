@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ss_room_statuses",
+  "info": {
+    "singularName": "ss-room-status",
+    "pluralName": "ss-room-statuses",
+    "displayName": "SSRoomStatus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "RoomStatus": {
+      "type": "string"
+    }
+  }
+}

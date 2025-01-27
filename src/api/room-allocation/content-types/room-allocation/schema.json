@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "room_allocations",
+  "info": {
+    "singularName": "room-allocation",
+    "pluralName": "room-allocations",
+    "displayName": "SSRoomAllocation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AllocationStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Allocated",
+        "Cancelled",
+        "Not Allocated"
+      ]
+    },
+    "FromDateTime": {
+      "type": "datetime"
+    },
+    "ToDateTime": {
+      "type": "datetime"
+    },
+    "AllocatedBeds": {
+      "type": "integer"
+    },
+    "ss_rooms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ss-room.ss-room",
+      "inversedBy": "room_allocations"
+    },
+    "ss_participant_registration": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::registration.registration",
+      "inversedBy": "room_allocations"
+    }
+  }
+}

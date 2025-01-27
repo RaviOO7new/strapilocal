@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "SSEvent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "EventName": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "EventFrom": {
+      "type": "datetime"
+    },
+    "EventTo": {
+      "type": "datetime"
+    },
+    "registrations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::registration.registration",
+      "mappedBy": "event"
+    }
+  }
+}

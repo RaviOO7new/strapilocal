@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ss_tags",
+  "info": {
+    "singularName": "ss-tag",
+    "pluralName": "ss-tags",
+    "displayName": "SSTag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Tag": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "participants",
+  "info": {
+    "singularName": "participant",
+    "pluralName": "participants",
+    "displayName": "SSParticipant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FullName": {
+      "type": "string"
+    },
+    "Age": {
+      "type": "integer"
+    },
+    "Gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "WhatsAppNo": {
+      "type": "biginteger"
+    },
+    "EmailId": {
+      "type": "email"
+    },
+    "Address": {
+      "type": "text"
+    },
+    "CentreName": {
+      "type": "string"
+    },
+    "StreetAddress": {
+      "type": "string"
+    },
+    "City": {
+      "type": "string"
+    },
+    "State": {
+      "type": "string"
+    },
+    "Occupation": {
+      "type": "string"
+    },
+    "RegularStudent": {
+      "type": "enumeration",
+      "enum": [
+        "Yes",
+        "No"
+      ]
+    },
+    "PurposeOfVisit": {
+      "type": "enumeration",
+      "enum": [
+        "Seva",
+        "Event",
+        "Visit",
+        "Health checkup",
+        "Other"
+      ]
+    },
+    "registrations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::registration.registration",
+      "mappedBy": "participants"
+    }
+  }
+}

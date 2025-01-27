@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ss_rooms",
+  "info": {
+    "singularName": "ss-room",
+    "pluralName": "ss-rooms",
+    "displayName": "SSRoom",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FloorNumber": {
+      "type": "enumeration",
+      "enum": [
+        "GroundFloor,",
+        "FirstFloor,",
+        "SecondFloor",
+        "ThirdFloor,",
+        "FourthFloor,",
+        "FifthFloor,",
+        "SixthFloor,",
+        "SeventhFloor"
+      ]
+    },
+    "BlockName": {
+      "type": "enumeration",
+      "enum": [
+        "BlockA",
+        "BlockB",
+        "BlockC",
+        "BlockD",
+        "BlockE"
+      ]
+    },
+    "RoomNumber": {
+      "type": "string"
+    },
+    "s_sbuilding": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::s-sbuilding.s-sbuilding",
+      "inversedBy": "ss_rooms"
+    },
+    "TotalBeds": {
+      "type": "integer"
+    },
+    "ss_tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ss-tag.ss-tag"
+    },
+    "ss_room_status": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::ss-room-status.ss-room-status"
+    },
+    "ss_room_facilities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ss-room-facility.ss-room-facility"
+    },
+    "room_allocations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::room-allocation.room-allocation",
+      "mappedBy": "ss_rooms"
+    }
+  }
+}

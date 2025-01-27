@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ss_room_facilities",
+  "info": {
+    "singularName": "ss-room-facility",
+    "pluralName": "ss-room-facilities",
+    "displayName": "SSRoomFacility",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Facility": {
+      "type": "string"
+    }
+  }
+}
